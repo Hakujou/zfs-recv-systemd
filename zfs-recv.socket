@@ -1,0 +1,10 @@
+[Unit]
+Description = ZFS Reception Socket
+
+[Socket]
+ListenStream = 5050
+BindIPv6Only = both
+Accept = True
+
+[Install]
+WantedBy = sockets.target

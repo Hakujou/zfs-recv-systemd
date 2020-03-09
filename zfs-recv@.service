@@ -1,0 +1,10 @@
+[Unit]
+Description = ZFS reception service
+After = network.service zfs-recv.socket
+Requires = zfs-recv.socket
+
+[Service]
+Type = simple
+ExecStart = /sbin/zfs recv -F MainVolume/SAN
+StandardInput = socket
+StandardOutput = inherit
